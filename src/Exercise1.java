@@ -16,7 +16,7 @@ public class Exercise1 {
             System.out.print("\n");
             System.out.print("Zero.");
         }
-
+        System.out.print("\n");
         in.close();
     }
 

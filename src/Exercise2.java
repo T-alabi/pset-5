@@ -10,7 +10,7 @@ public class Exercise2 {
         if (num % 2 == 0 || (- num % 2) != 1){
             System.out.print("\n");
             System.out.println("Even.");
-        } else  /*(num % 2 > 0  || (- num % 2) = -1)*/{
+        } else {
             System.out.print("\n");
             System.out.println("Odd.");
         }
