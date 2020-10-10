@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-
 public class Exercise6 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
@@ -13,84 +12,93 @@ public class Exercise6 {
         String cardInfo = in.nextLine();
         System.out.print("\n");
 
-        String rankval = "";
-        String suitval = "";
+        String rankVal = "";
+        String suitVal = "";
 
         //test card if real
-        if(Arrays.asList(suits).contains(cardInfo.substring(0,1))  && Arrays.asList(rank).contains(cardInfo.substring(1))){
+        if(Arrays.asList(suits).contains(cardInfo.substring(1))  && Arrays.asList(rank).contains(cardInfo.substring(0,1))){
 
             //suit switch
-            switch (cardInfo.substring(0,1)){
+            switch (cardInfo.substring(1)){
                 case "C":
-                     suitval = "Clubs";
                 case "c":
-                    suitval = "Clubs";
+                    suitVal = "Clubs";
                     break;
                 case "D":
-                    suitval = "Diamonds";
                 case "d":
-                    suitval = "Diamonds";
+                    suitVal = "Diamonds";
                     break;
                 case "H":
-                    suitval = "Hearts";
                 case "h":
-                    suitval = "Hearts";
+                    suitVal = "Hearts";
                     break;
                 case "S":
-                    suitval = "Spades";
                 case "s":
-                    suitval = "Spades";
+                    suitVal = "Spades";
                     break;
              }
 
-            switch (cardInfo.substring(1)){
+            switch (cardInfo.substring(0,1)){
                 case "2":
-                     rankval = "Two of ";
+                     rankVal = "Two of ";
                      break;
                 case "3":
-                    rankval = "Three of ";
+                    rankVal = "Three of ";
                     break;
                 case "4":
-                    rankval = "Four of ";
+                    rankVal = "Four of ";
                     break;
                 case "5":
-                    rankval = "Five of ";
+                    rankVal = "Five of ";
                     break;
                 case "6":
-                    rankval = "Six of ";
+                    rankVal = "Six of ";
                     break;
                 case "7":
-                    rankval = "Seven of ";
+                    rankVal = "Seven of ";
                     break;
                 case "8":
-                    rankval = "Eight of ";
+                    rankVal = "Eight of ";
                     break;
                 case "9":
-                    rankval = "Nine of ";
+                    rankVal = "Nine of ";
                     break;
                 case "T":
-                    rankval = "Ten of ";
+                case "t":
+                    rankVal = "Ten of ";
                     break;
                 case "J":
-                    rankval = "Two of ";
+                case "j":
+                    rankVal = "Jack of ";
+                    break;
+                case "Q":
+                case "q":
+                    rankVal = "Queen of ";
+                    break;
+                case "K":
+                case "k":
+                    rankVal = "King of ";
+                    break;
+                case "A":
+                case "a":
+                    rankVal = "Ace of ";
                     break;
             }
-                System.out.print(rankval + suitval + ".");
+                System.out.print(rankVal + suitVal + ".");
 
         }
-        else if ( !Arrays.asList(suits).contains(cardInfo.substring(0,1))  && !Arrays.asList(rank).contains(cardInfo.substring(1)) || cardInfo.length > 2){
+        else if ( !Arrays.asList(suits).contains(cardInfo.substring(1))  && !Arrays.asList(rank).contains(cardInfo.substring(0,1)) || cardInfo.length() > 2){
             System.out.print("That's not a valid card.");
 
-        }else if( (!Arrays.asList(suits).contains(cardInfo.substring(0,1))) && Arrays.asList(rank).contains(cardInfo.substring(1)) ){
+        }else if( (!Arrays.asList(suits).contains(cardInfo.substring(1))) && Arrays.asList(rank).contains(cardInfo.substring(0,1)) ){
             System.out.print("That's not a valid suit.");
-        }else if(!Arrays.asList(rank).contains(cardInfo.substring(1)) && Arrays.asList(suits).contains(cardInfo.substring(0,1)) ){
+        }else if(!Arrays.asList(rank).contains(cardInfo.substring(0,1)) && Arrays.asList(suits).contains(cardInfo.substring(1)) ){
             System.out.print("That's not a valid rank.");
         }
-        System.out.print("\n");
-
-
 
         System.out.print("\n");
         in.close();
+        System.out.print("\n");
+
     }
 }
