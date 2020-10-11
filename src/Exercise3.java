@@ -33,7 +33,6 @@ public class Exercise3 {
             System.out.println("Unordered.");
         }
 
-        System.out.print("\n");
         in.close();
     }
 

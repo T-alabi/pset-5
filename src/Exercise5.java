@@ -26,5 +26,7 @@ public class Exercise5 {
        }
         System.out.print("\n");
         in.close();
+        System.out.print("\n");
+
     }
 }
